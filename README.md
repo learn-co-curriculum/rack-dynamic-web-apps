@@ -6,9 +6,9 @@
 2. Use the `#write` method in a `Rack::Response` object to make a dynamic web app in Rack
 
 
-## Creating a Dynamic Web App 
+## Creating a Dynamic Web App
 
-Making web apps that always give the same response are boring. Programming is fun because of its ability to create dynamic responses that change depending on the input. A dynamic web app in Rack is pretty straightforward. Let's say we wanted to create a simple slots game. 
+Making web apps that always give the same response are boring. Programming is fun because of its ability to create dynamic responses that change depending on the input. A dynamic web app in Rack is pretty straightforward. Let's say we wanted to create a simple slots game.
 
 First, let's set up our basic Rack app:
 
@@ -25,6 +25,10 @@ end
 ```
 
 Then run it with `rackup config.ru`. If we go to `localhost:9292` in our browser, we should see "Hello, World". Let's liven things up a bit. The amazing part of Rack and everything (like Rails) that is built on top of Rack is that it's *just Ruby*. If you were writing a command line slots game generator, you would first need to generate three numbers between 1 and 20. You could do that like this:
+
+**NOTE**: Don't sweat the `Kernel` bit — [Kernel](http://ruby-doc.org/core-2.3.0/Kernel.html)
+is a module that holds many of Ruby's most useful bits. We're just using it here
+to generate some random numbers.
 
 ```ruby
 num_1 = Kernel.rand(1..20)
