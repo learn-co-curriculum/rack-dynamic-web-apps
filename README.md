@@ -5,7 +5,6 @@
 1. Translate a command line Ruby app to a dynamic web app
 2. Use the `#write` method in a `Rack::Response` object to make a dynamic web app in Rack
 
-
 ## Creating a Dynamic Web App
 
 Making web apps that always give the same response are boring. Programming is fun because of its ability to create dynamic responses that change depending on the input. A dynamic web app in Rack is pretty straightforward. Let's say we wanted to create a simple slots game.
@@ -24,7 +23,33 @@ class Application
 end
 ```
 
-Then run it with `rackup config.ru`. If we go to `localhost:9292` in our browser, we should see "Hello, World". Let's liven things up a bit. The amazing part of Rack and everything (like Rails) that is built on top of Rack is that it's *just Ruby*. If you were writing a command line slots game generator, you would first need to generate three numbers between 1 and 20. You could do that like this:
+Then run it with `rackup config.ru`. You should see something like
+
+```shell
+[2016-07-28 10:09:08] INFO  WEBrick 1.3.1
+[2016-07-28 10:09:08] INFO  ruby 2.3.0 (2015-12-25) [x86_64-darwin15]
+[2016-07-28 10:09:08] INFO  WEBrick::HTTPServer#start: pid=38967 port=9292
+```
+
+Make note of `port=9292` — that shows which port we'll access the application on
+in the browser. But what's the host? If we're developing locally, we can just
+use `localhost` — so in this case we'd visit `http://localhost:9292`.
+
+If we're using the IDE, we should also see a line like
+
+```shell
+Starting server at 104.131.138.76:6868
+```
+
+That is the full URL to use. (**Yours will most likely be different!**) So in
+this case, we'd visit http://104.131.138.76:6868 in the browser. If we're using
+the IDE, **localhost will not work**.
+
+When we visit the appropriate URL in our browser, we should see "Hello, World".
+Let's liven things up a bit. The amazing part of Rack and everything (like
+Rails) that is built on top of Rack is that it's *just Ruby*. If you were
+writing a command line slots game generator, you would first need to generate
+three numbers between 1 and 20. You could do that like this:
 
 **NOTE**: Don't sweat the `Kernel` bit — [Kernel](http://ruby-doc.org/core-2.3.0/Kernel.html)
 is a module that holds many of Ruby's most useful bits. We're just using it here
