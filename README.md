@@ -9,7 +9,7 @@
 
 Making web apps that always give the same response are boring. Programming is fun because of its ability to create dynamic responses that change depending on the input. A dynamic web app in Rack is pretty straightforward. Let's say we wanted to create a simple slots game.
 
-First, let's set up our basic Rack app:
+First, let's set up our basic Rack app inside of `app/application.rb`:
 
 ```ruby
 class Application
