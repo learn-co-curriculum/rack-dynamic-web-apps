@@ -150,5 +150,3 @@ The `\n`s are just a special character which gets rendered by the browser as a
 new line. Kill your running server with CTRL-C and re-run it and refresh your
 browser. Feel free to cheat a bit and change the random numbers to just be
 between one and two. That way you can test that both work.
-
-<p data-visibility='hidden'>View <a href='https://learn.co/lessons/rack-dynamic-web-apps' title='Dynamic Web Apps with Rack'>Dynamic Web Apps with Rack</a> on Learn.co and start learning to code for free.</p>
