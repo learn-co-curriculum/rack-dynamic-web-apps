@@ -4,7 +4,7 @@
 
 - Translate a command line Ruby app to a dynamic web app
 - Use the `#write` method in a `Rack::Response` object to make a dynamic web app
-   in Rack
+  in Rack
 
 ## Creating a Dynamic Web App
 
@@ -29,7 +29,7 @@ end
 
 Then run it with `rackup config.ru`. You should see something like
 
-```shell
+```txt
 [2016-07-28 10:09:08] INFO  WEBrick 1.3.1
 [2016-07-28 10:09:08] INFO  ruby 2.3.0 (2015-12-25) [x86_64-darwin15]
 [2016-07-28 10:09:08] INFO  WEBrick::HTTPServer#start: pid=38967 port=9292
@@ -39,25 +39,16 @@ Make note of `port=9292` — that shows which port we'll access the application 
 in the browser. But what's the host? If we're developing locally, we can just
 use `localhost` — so in this case we'd visit `http://localhost:9292`.
 
-If we're using the IDE, we should also see a line like
-
-```shell
-Starting server at 104.131.138.76:6868
-```
-
-That is the full URL to use. (**Yours will most likely be different!**) So in
-this case, we'd visit `http://104.131.138.76:6868` in the browser. If we're using
-the IDE, **localhost will not work**.
-
 When we visit the appropriate URL in our browser, we should see "Hello, World".
 Let's liven things up a bit. The amazing part of Rack and everything (like
-Rails) that is built on top of Rack is that it's *just Ruby*. If you were
+Rails) that is built on top of Rack is that it's _just Ruby_. If you were
 writing a command line slots game generator, you would first need to generate
 three numbers between 1 and 20. You could do that like this:
 
-**NOTE**: Don't sweat the `Kernel` bit — [Kernel](http://ruby-doc.org/core-2.3.0/Kernel.html)
-is a module that holds many of Ruby's most useful bits. We're just using it here
-to generate some random numbers.
+**NOTE**: Don't sweat the `Kernel` bit —
+[Kernel](http://ruby-doc.org/core-2.3.0/Kernel.html) is a module that holds many
+of Ruby's most useful bits. We're just using it here to generate some random
+numbers.
 
 ```ruby
 num_1 = Kernel.rand(1..20)
